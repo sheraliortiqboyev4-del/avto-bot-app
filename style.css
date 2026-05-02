@@ -753,67 +753,66 @@ body.light-mode .bg-animation {
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: none;
     }
 
     .pricing-card {
-        padding: 30px 20px;
-        border-radius: 20px !important;
+        padding: 15px 5px;
+        border-radius: 12px !important;
     }
 
     .pricing-card.featured {
-        transform: scale(1.02);
+        transform: scale(1);
+        margin: 0;
     }
 
     .popular-tag {
-        font-size: 10px;
-        padding: 4px 12px;
-        top: -12px;
+        font-size: 8px;
+        padding: 2px 8px;
+        top: -10px;
     }
 
     .pricing-header h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 10px;
+        margin-bottom: 5px;
     }
 
     .price {
-        font-size: 28px;
-        margin-bottom: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
     }
 
     .price span {
-        font-size: 12px;
+        font-size: 8px;
     }
 
     .pricing-features {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     .pricing-features li {
-        font-size: 14px;
-        gap: 10px;
-        margin-bottom: 8px;
+        font-size: 8px;
+        gap: 4px;
+        margin-bottom: 5px;
     }
 
     .pricing-features i {
-        width: 16px;
+        width: 10px;
     }
 
     .premium-badge {
-        font-size: 9px;
-        padding: 4px 20px;
-        top: 15px;
+        font-size: 7px;
+        padding: 2px 15px;
+        top: 10px;
         right: -15px;
     }
 
     .buy-btn {
-        padding: 12px 20px !important;
-        font-size: 14px !important;
-        border-radius: 12px !important;
+        padding: 8px 5px !important;
+        font-size: 10px !important;
+        border-radius: 8px !important;
     }
 
     .pricing-title {
