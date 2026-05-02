@@ -227,7 +227,7 @@ function setLanguage(lang) {
 }
 
 function updateBuyLinks(lang) {
-    const adminUsername = "ortiqov_x7";
+    const adminUsername = "AIiy_oka";
     document.querySelectorAll('.buy-btn').forEach(btn => {
         const planKey = `plan_${btn.getAttribute('data-plan')}`;
         const planName = translations[lang][planKey];
