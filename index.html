@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Avto Bot — Full Automation System</title>
+    <!-- Telegram WebApp SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <!-- Loader -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="particles" id="particles-js"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AVTO <span class="gradient-text">BOT</span></span>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <button id="langBtn" class="glass-btn">
+                        <span id="currentLang">UZ</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div id="langMenu" class="lang-dropdown glass-card">
+                        <div class="lang-option" data-lang="uz">O'zbekcha</div>
+                        <div class="lang-option" data-lang="ru">Русский</div>
+                        <div class="lang-option" data-lang="en">English</div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="glass-btn icon-btn">
+                    <i data-lucide="sun" id="sunIcon"></i>
+                    <i data-lucide="moon" id="moonIcon" class="hidden"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title" data-i18n="hero_title">Avto Bot — Full Automation System</h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">Elevate your Telegram experience with our powerful automation tools. Fast, secure, and reliable.</p>
+                    <div class="hero-btns">
+                        <a href="https://t.me/Foydasizku_bot" target="_blank" class="btn btn-primary glow-btn" data-i18n="btn_start">Start Now</a>
+                        <a href="https://t.me/AvtoBot_News" target="_blank" class="btn btn-outline glass-btn" data-i18n="btn_telegram">
+                            <i data-lucide="send"></i> Rasmiy Kanal
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in">
+                    <div class="dashboard-preview glass-card">
+                        <div class="preview-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <div class="preview-title">avtobot users</div>
+                        </div>
+                        <div class="preview-body">
+                            <div class="preview-stats">
+                                <div class="stat-item">
+                                    <div class="stat-val">248</div>
+                                    <div class="stat-label">Active Users</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">12k</div>
+                                    <div class="stat-label">Actions Today</div>
+                                </div>
+                            </div>
+                            <div class="preview-graph">
+                                <div class="bar" style="height: 40%"></div>
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 50%"></div>
+                                <div class="bar" style="height: 90%"></div>
+                                <div class="bar" style="height: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title" data-i18n="features_title">Powerful Features</h2>
+                    <p class="section-desc" data-i18n="features_subtitle">Everything you need to automate your Telegram workflow.</p>
+                </div>
+                <div class="features-grid">
+                    <!-- Feature Cards -->
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="gem" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_diamond_title">Auto Diamon</h3>
+                        <p data-i18n="feat_diamond_desc">Automatically clicks "Olish" buttons in groups to collect rewards instantly.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="at-sign" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_tag_title">Auto Utag</h3>
+                        <p data-i18n="feat_tag_desc">Tags all group members one by one to ensure maximum visibility for your messages.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="users" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_scraper_title">AutoUser (Scraper)</h3>
+                        <p data-i18n="feat_scraper_desc">Extracts usernames from any Telegram group and exports them for your campaigns.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="zap" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_raid_title">Auto Raid</h3>
+                        <p data-i18n="feat_raid_desc">Sends continuous messages or stickers to a target chat for high-impact interactions.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="megaphone" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_ads_title">Auto Reklama</h3>
+                        <p data-i18n="feat_ads_desc">Sends ads to collected user lists with smart rotation to avoid spam filters.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="bar-chart-3" class="feature-icon"></i>
+                        </div>
+                        <h3 data-i18n="feat_stats_title">Profile & Stats</h3>
+                        <p data-i18n="feat_stats_desc">Detailed dashboard showing your account activity, subscription status, and performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="how-section section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title" data-i18n="how_title">How It Works</h2>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item fade-in">
+                        <div class="step-num">1</div>
+                        <h4 data-i18n="step1_title">Connect Account</h4>
+                        <p data-i18n="step1_desc">Securely link your Telegram account via session or QR code.</p>
+                    </div>
+                    <div class="step-item fade-in">
+                        <div class="step-num">2</div>
+                        <h4 data-i18n="step2_title">Choose Function</h4>
+                        <p data-i18n="step2_desc">Select from our wide range of automation tools.</p>
+                    </div>
+                    <div class="step-item fade-in">
+                        <div class="step-num">3</div>
+                        <h4 data-i18n="step3_title">Run Automation</h4>
+                        <p data-i18n="step3_desc">Configure settings and start the bot with one click.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="pricing-section section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title" data-i18n="pricing_main_title">Ishlatish Narxlari</h2>
+                    <p class="section-desc" data-i18n="pricing_main_subtitle">O'zingizga mos tarifni tanlang va avtomatlashtirishni boshlang.</p>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Daily -->
+                    <div class="pricing-card glass-card fade-in">
+                        <div class="pricing-header">
+                            <h3 data-i18n="plan_daily">1 Kunlik</h3>
+                            <div class="price">5,000 <span>UZS</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_all">Barcha funksiyalar</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_24h">24 soat foydalanish</span></li>
+                        </ul>
+                        <a href="https://t.me/id_uzzz" target="_blank" class="btn btn-outline glass-btn buy-btn" data-plan="daily" data-i18n="btn_buy">Sotib olish</a>
+                    </div>
+                    <!-- Monthly -->
+                    <div class="pricing-card glass-card fade-in featured">
+                        <div class="popular-tag" data-i18n="popular_tag">ENG MASHHUR</div>
+                        <div class="pricing-header">
+                            <h3 data-i18n="plan_monthly">1 Oylik</h3>
+                            <div class="price">40,000 <span>UZS</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_all">Barcha funksiyalar</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_30d">30 kun foydalanish</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_support">Texnik yordam</span></li>
+                        </ul>
+                        <a href="https://t.me/id_uzzz" target="_blank" class="btn btn-primary glow-btn buy-btn" data-plan="monthly" data-i18n="btn_buy">Sotib olish</a>
+
+                    </div>
+                    <!-- VIP -->
+                    <div class="pricing-card glass-card fade-in">
+                        <div class="premium-badge" data-i18n="vip_badge">VIP</div>
+                        <div class="pricing-header">
+                            <h3 data-i18n="plan_vip">VIP Tarif</h3>
+                            <div class="price">200,000 <span>UZS</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_all">Barcha funksiyalar</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_unlimited">Cheksiz vaqt</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="p_feat_priority">Ustuvor yordam</span></li>
+                        </ul>
+                        <a href="https://t.me/id_uzzz" target="_blank" class="btn btn-outline glass-btn buy-btn" data-plan="vip" data-i18n="btn_buy">Sotib olish</a>
+
+                    </div>
+                </div>
+                <p class="pricing-footer-note text-center fade-in" data-i18n="admin_approval">Admin tasdig'i talab qilinadi.</p>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section id="stats" class="stats-section section-padding">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <h3 class="counter" data-target="174">0</h3>
+                        <p data-i18n="stat_users">Happy Users</p>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <h3 class="counter" data-target="120000">0</h3>
+                        <p data-i18n="stat_actions">Actions Performed</p>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <h3 class="counter" data-target="272">0</h3>
+                        <p data-i18n="stat_bots">Active Users</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">AVTO <span class="gradient-text">BOT</span></span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://t.me/AvtoBot_News" target="_blank" class="footer-link">
+                        <i data-lucide="send"></i> @AvtoBot_News
+                    </a>
+                    <a href="https://t.me/ortiqov_x7" target="_blank" class="footer-link">
+                        <i data-lucide="user"></i> Admin: @ortiqov_x7
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Avto Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
